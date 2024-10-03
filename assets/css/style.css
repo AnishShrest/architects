@@ -59,7 +59,21 @@ img{
     font-family: var(--secondary-color);
     font-weight: 400;
     color: var(--primary-color);
-    padding: 8px 16px;
+    padding: 8px 0;
+    position: relative;
+}
+.menu a::after{
+    content: "";
+    position: absolute;
+    transition: var(--transition);
+    bottom: 0px;
+    width: 0;
+    left: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+.menu a:hover::after{
+    width: 100%;
 }
 h1 a{
     color: var(--primary-color);
@@ -113,6 +127,21 @@ figure{
 
 .project figure{
     position: relative;
+    overflow: hidden;
+}
+
+.project figure:hover img{
+    transform: scale(1.1);
+
+}
+.project figure:hover a{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.project img{
+    width: 100%;
+    transition: var(--transition);
 }
 
 .project figure a{
@@ -146,10 +175,18 @@ figure{
     padding: 30px;
     box-shadow: 0 13px 20px 0 rgba(0, 0, 0,0.1);
 }
+.card figure{
+    overflow: hidden;
+}
 .card figure img{
     display: flex;
+    width: 100%;
+    transition: var(--transition);
 }
-.card-body a{
+.card:hover figure img{
+    transform: scale(1.1);
+}
+.card-body .btn{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -161,6 +198,9 @@ figure{
 .card-body h3{
     padding: 15px 0;
 }
+.card-body h3 a{
+    color: var(--primary-color);
+}
 .card-body span{
     color: rgba(0, 0, 0,0.5);
     padding: 15px 0;
@@ -168,15 +208,27 @@ figure{
 .card-body p{
     padding: 15px 0;
 }
-.contact-info label{
+.card-body .btn:hover{
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+}
+.card-body h3 a:hover{
+    color: purple;
+}
+.form-control{
+    border: none;
+    padding: 0;
+}
+.form-control label{
     display: block;
     width: 100%;
     margin-top: 20px;
     margin-bottom: 20px;
 }
-.contact-info input{
+.form-control input{
     width: 100%;
     padding: 10px 20px;
+    outline: none;
 }
 button{
     padding: 15px 20px;
